@@ -1,0 +1,11 @@
+"Playlists" table will need a "shared" bool, a user map re recipient/me & maybe even a who shared option re the user that sent it to "me"
+
+Playlist table must have user map for creator - does it already ?
+
+Homepage will feature 3 sample playlists w ideas for themes (and an outline for how to use the site ?)
+
+probably best to start by building playlist view .. will likely take the longest. starting to doubt that plan actually. let's start by setting up authorization and profile view. we have a lot of the code for that already and we've done it before. 
+Lets do navbar next :) + hamburger & dropdown menu
+Then i'd like to focus on the home page route and the create pages for tags and friends. 
+my playlist & shared playlists are filtered gets .. as long as the data exists in a logical way those should be fairly straight forward. Same for Friends.
+create playlist is going to be the most complicated bc each media item individually will be posting with the header of which playlist they belong to. that's a really long payload. unless the playlist is capped ? at maybe 10 items ? that's about 4 hours of the average sitcom
