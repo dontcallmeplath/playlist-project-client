@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: rgba(211, 211, 211, 0.425);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 1px 3px 4px grey;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.navbar__item {
+  flex-basis: 20%;
+  list-style-type: none;
+  text-align: center;
+  margin: auto;
+}
+
+.navbar__logout {
+  margin-left: auto;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: black;
+  font-family: monospace;
+  font-size: 1.25rem;
+}
+
+.navbar__link:hover {
+  text-decoration: underline;
+}
