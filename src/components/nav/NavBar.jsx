@@ -5,34 +5,60 @@ import "./NavBar.css";
 
 export const NavBar = () => {
   const navigate = useNavigate();
-  const [currentUser, setCurrentUser] = useState({});
+  // const [currentUser, setCurrentUser] = useState({});
 
-  useEffect(() => {
-    const localPlaylistUser = localStorage.getItem("playlist_user");
-    const playlistUserObject = JSON.parse(localPlaylistUser);
-    setCurrentUser(playlistUserObject.id);
-  }, []);
+  // useEffect(() => {
+  //   const user = localStorage.getItem("id");
+  //   setCurrentUser(user);
+  // }, []);
 
   return (
     <ul className="navbar">
       <li className="navbar__item">
         <Link className="navbar__link" to="/">
-          Class of 66
+          Home
         </Link>
       </li>
 
       <li className="navbar__item">
-        <Link className="navbar__link" to={`/users/${currentUser}/profile`}>
+        <Link className="navbar__link" to="/">
+          New
+        </Link>
+      </li>
+
+      <li className="navbar__item">
+        <Link className="navbar__link" to={`/my_profile`}>
           My Profile
         </Link>
       </li>
-      {localStorage.getItem("playlist_user") ? (
+
+      <li className="navbar__item">
+        <Link className="navbar__link" to={`/my_playlists`}>
+          My Playlists
+        </Link>
+      </li>
+
+      <li className="navbar__item">
+        <Link className="navbar__link" to={`/shared_playlists`}>
+          Shared Playlists
+        </Link>
+      </li>
+
+      <li className="navbar__item">
+        <Link className="navbar__link" to={`/friends`}>
+          Friends
+        </Link>
+      </li>
+
+      {localStorage.getItem("token") ? (
         <li className="navbar__item">
           <Link
             className="navbar__link"
             to=""
             onClick={() => {
-              localStorage.removeItem("playlist_user");
+              localStorage.removeItem("id");
+              localStorage.removeItem("name");
+              localStorage.removeItem("token");
               navigate("/login", { replace: true });
             }}
           >

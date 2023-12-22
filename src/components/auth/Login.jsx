@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../managers/AuthManager.jsx";
 
-export const Login = ({ setToken }) => {
+export const Login = () => {
   const username = useRef();
   const password = useRef();
   const navigate = useNavigate();
@@ -18,11 +18,10 @@ export const Login = ({ setToken }) => {
 
     loginUser(user).then((res) => {
       if ("valid" in res && res.valid) {
-        navigate("/");
-        setToken(res.token);
         localStorage.setItem("id", res.id);
-        localStorage.setItem("staff", res.staff);
+        localStorage.setItem("token", res.token);
         localStorage.setItem("name", res.name);
+        navigate("/");
       } else {
         setisUnsuccessful(true);
       }

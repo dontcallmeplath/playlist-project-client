@@ -1,6 +1,6 @@
 "Playlists" table will need a "shared" bool, a user map re recipient/me & maybe even a who shared option re the user that sent it to "me"
-
-Playlist table must have user map for creator - does it already ?
+	- shared & shared_with
+Playlist table must have user map for creator - does it already ? Yes
 
 Homepage will feature 3 sample playlists w ideas for themes (and an outline for how to use the site ?)
 
