@@ -16,21 +16,35 @@ export const AllTags = () => {
     tag.label.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  return (
-    <div>
-      <h1>TAGS</h1>
-      <input
-        type="text"
-        placeholder="Search tags..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+  if (searchTerm == "") {
+    return (
+      <div>
+        <h1>TAGS</h1>
+        <input
+          type="text"
+          placeholder="Search tags..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1>TAGS</h1>
+        <input
+          type="text"
+          placeholder="Search tags..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
 
-      {filteredTags.map((tag) => (
-        <>
-          <div>{tag.label}</div>
-        </>
-      ))}
-    </div>
-  );
+        {filteredTags.map((tag) => (
+          <>
+            <div key={tag.id}>{tag.label}</div>
+          </>
+        ))}
+      </div>
+    );
+  }
 };

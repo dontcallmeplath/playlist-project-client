@@ -18,7 +18,7 @@ export const AllEpisodes = () => {
       episode.series_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (filteredEpisodes === "Undefined") {
+  if (searchTerm == "") {
     return (
       <div>
         <h1>EPISODES</h1>
@@ -28,15 +28,6 @@ export const AllEpisodes = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-
-        {episodes.map((episode) => (
-          <>
-            <div>
-              <strong>{episode.series_name}</strong>
-            </div>
-            <div>{episode.episode_name}</div>
-          </>
-        ))}
       </div>
     );
   } else {
@@ -52,10 +43,10 @@ export const AllEpisodes = () => {
 
         {filteredEpisodes.map((episode) => (
           <>
-            <div>
+            <div key={episode.id}>
               <strong>{episode.series_name}</strong>
+              <div>{episode.episode_name}</div>
             </div>
-            <div>{episode.episode_name}</div>
           </>
         ))}
       </div>

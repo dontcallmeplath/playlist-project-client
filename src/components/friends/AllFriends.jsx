@@ -15,11 +15,13 @@ export const AllFriends = () => {
 
   return (
     <div>
-      HI!
+      <h1>FRIENDS</h1>
       {friends.map((friend) => (
         <>
-          <div>{friend.name}</div>
-          <div>{friend.email}</div>
+          <div key={friend.id}>
+            {friend.name}
+            <div>{friend.email}</div>
+          </div>
         </>
       ))}
     </div>

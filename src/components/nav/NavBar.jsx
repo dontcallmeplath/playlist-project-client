@@ -26,26 +26,32 @@ export const NavBar = () => {
       </li>
 
       <li className="navbar__item">
-        <Link className="navbar__link" to={`/my_profile`}>
-          My Profile
+        <Link className="navbar__link" to={`/friends`}>
+          Friends
+        </Link>
+      </li>
+
+      <li className="navbar__item">
+        <Link className="navbar__link" to={`/tags`}>
+          Tags
+        </Link>
+      </li>
+
+      <li className="navbar__item">
+        <Link className="navbar__link" to={`/episodes`}>
+          Episodes
         </Link>
       </li>
 
       <li className="navbar__item">
         <Link className="navbar__link" to={`/my_playlists`}>
-          My Playlists
+          Playlists
         </Link>
       </li>
 
       <li className="navbar__item">
-        <Link className="navbar__link" to={`/shared_playlists`}>
-          Shared Playlists
-        </Link>
-      </li>
-
-      <li className="navbar__item">
-        <Link className="navbar__link" to={`/friends`}>
-          Friends
+        <Link className="navbar__link" to={`/my_profile`}>
+          Profile
         </Link>
       </li>
 
