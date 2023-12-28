@@ -14,3 +14,33 @@ export const updateUser = (user, userId, token) => {
     body: JSON.stringify(user),
   });
 };
+
+export const pullUserFriends = (token) => {
+  return fetch(`http://localhost:8000/friends?creator=current`, {
+    method: "GET",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
+};
+
+export const pullUserPlaylists = (token) => {
+  return fetch(`http://localhost:8000/playlists?creator=current`, {
+    method: "GET",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
+};
+
+export const pullAsset = (asset, token) => {
+  return fetch(`http://localhost:8000/${asset}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
+};
