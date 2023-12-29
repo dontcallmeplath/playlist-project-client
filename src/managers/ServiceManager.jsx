@@ -44,3 +44,18 @@ export const pullAsset = (asset, token) => {
     },
   }).then((res) => res.json());
 };
+
+export const postAsset = (asset, token, data) => {
+  return fetch(`http://localhost:8000/${asset}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((res) => {
+    if (res.ok) {
+      res.json();
+    }
+  });
+};

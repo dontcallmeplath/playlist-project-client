@@ -2,25 +2,22 @@ import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { postAsset } from "../../managers/ServiceManager";
 
-export const AddFriend = () => {
-  //   email, name, creator_id(added by create method)
+export const AddTag = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [isUnsuccessful, setisUnsuccessful] = useState(false);
-  const email = useRef();
-  const name = useRef();
+  const label = useRef();
 
   const handleUpdate = (e) => {
     e.preventDefault();
 
     const data = {
-      email: email.current.value,
-      name: name.current.value,
+      label: label.current.value,
     };
 
-    postAsset("friends", token, data).then((res) => {
+    postAsset("tags", token, data).then((res) => {
       if (res) {
-        navigate("/friends");
+        navigate("/tags");
       } else {
         setisUnsuccessful(true);
       }
@@ -30,19 +27,12 @@ export const AddFriend = () => {
   return (
     <section className="">
       <form className="" onSubmit={handleUpdate}>
-        <h1 className="">ADD FRIEND</h1>
+        <h1 className="">ADD TAG</h1>
 
         <div className="">
-          <label className="">Name</label>
+          <label className="">Tag</label>
           <div className="">
-            <input className="" type="text" ref={name} />
-          </div>
-        </div>
-
-        <div className="">
-          <label className="">Email</label>
-          <div className="">
-            <input className="" type="text" ref={email} />
+            <input className="" type="text" ref={label} />
           </div>
         </div>
 
@@ -54,7 +44,7 @@ export const AddFriend = () => {
           </div>
 
           <div className="">
-            <Link to="/friends" className="">
+            <Link to="/tags" className="">
               Cancel
             </Link>
           </div>
