@@ -24,7 +24,8 @@ export const AllPlaylists = () => {
   //     for (var n = name_array.length; n > 0; n--) {
   return (
     <>
-      <h3>Playlist: {names}</h3>
+      <h1>MY PLAYLISTS</h1>
+      <h3>{names}</h3>
 
       {playlists.map((playlist) => (
         <>

@@ -20,14 +20,15 @@ export const ApplicationViews = () => {
         <Route path="/register" element={<Register />} />
         <Route element={<Authorized />}>
           <Route path="/" element={<HomeView />} />
-          <Route path="/my_profile" element={<ProfileView />} />
-          <Route path="/friends" element={<AllFriends />} />
-          <Route path="/add_friend" element={<AddFriend />} />
+          <Route path="/my_playlists" element={<AllPlaylists />} />
+          {/* <Route path="/add_playlist" element={<AddPlaylist />} /> */}
           <Route path="/tags" element={<AllTags />} />
           <Route path="/add_tag" element={<AddTag />} />
           <Route path="/episodes" element={<AllEpisodes />} />
           <Route path="/add_episode" element={<AddEpisode />} />
-          <Route path="/my_playlists" element={<AllPlaylists />} />
+          <Route path="/friends" element={<AllFriends />} />
+          <Route path="/add_friend" element={<AddFriend />} />
+          <Route path="/my_profile" element={<ProfileView />} />
         </Route>
       </Routes>
     </>

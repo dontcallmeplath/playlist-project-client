@@ -1,13 +1,12 @@
 .navbar {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
   background-color: rgba(211, 211, 211, 0.425);
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: 1px 3px 4px grey;
-  max-width: 100%;
-  margin: 1rem auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .navbar__item {
