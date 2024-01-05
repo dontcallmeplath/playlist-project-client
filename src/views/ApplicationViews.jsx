@@ -7,6 +7,7 @@ import { ProfileView } from "../components/profile/Profile";
 import { AllFriends } from "../components/friends/AllFriends";
 import { AddFriend } from "../components/friends/AddFriends";
 import { AllPlaylists } from "../components/playlists/AllPlaylists";
+import { AddPlaylist } from "../components/playlists/AddPlaylist";
 import { AllTags } from "../components/tags/AllTags";
 import { AddTag } from "../components/tags/AddTags";
 import { AllEpisodes } from "../components/episodes/AllEpisodes";
@@ -21,7 +22,7 @@ export const ApplicationViews = () => {
         <Route element={<Authorized />}>
           <Route path="/" element={<HomeView />} />
           <Route path="/my_playlists" element={<AllPlaylists />} />
-          {/* <Route path="/add_playlist" element={<AddPlaylist />} /> */}
+          <Route path="/add_playlist" element={<AddPlaylist />} />
           <Route path="/tags" element={<AllTags />} />
           <Route path="/add_tag" element={<AddTag />} />
           <Route path="/episodes" element={<AllEpisodes />} />

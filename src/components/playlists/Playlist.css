@@ -1,0 +1,42 @@
+.container {
+  display: inline-flex;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  justify-content: center;
+}
+/* 
+.playlist-container {
+  
+}
+
+.episode-container {
+  
+} */
+
+.playlist-container,
+.episode-container {
+  border: black 1px solid;
+  margin: 10px;
+  flex-basis: auto;
+  min-width: 450px;
+  min-height: 700px;
+}
+
+.content-area {
+  border: black 1px solid;
+  width: 80%;
+  height: 80%;
+  margin: 20px auto;
+  /* padding: 15px 0; */
+}
+
+.heading {
+  margin-bottom: 5px;
+}
+
+.episode {
+  border: black 1px solid;
+  width: 80%;
+  margin: 5px auto;
+  cursor: pointer;
+}

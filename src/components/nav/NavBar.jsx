@@ -29,7 +29,7 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="navbar-container">
+    <>
       <ul className="navbar" onMouseLeave={onMouseLeave}>
         <li className="navbar__item">
           <Link className="navbar__link" to="/">
@@ -104,6 +104,6 @@ export const NavBar = () => {
           ""
         )}
       </ul>
-    </div>
+    </>
   );
 };

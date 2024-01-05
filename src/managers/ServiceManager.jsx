@@ -15,24 +15,16 @@ export const updateUser = (user, userId, token) => {
   });
 };
 
-export const pullUserFriends = (token) => {
-  return fetch(`http://localhost:8000/friends?creator=current`, {
+export const pullUserAssets = (asset, token) => {
+  return fetch(`http://localhost:8000/${asset}?creator_id=current`, {
     method: "GET",
     headers: {
       Authorization: `Token ${token}`,
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json());
-};
-
-export const pullUserPlaylists = (token) => {
-  return fetch(`http://localhost:8000/playlists?creator=current`, {
-    method: "GET",
-    headers: {
-      Authorization: `Token ${token}`,
-      "Content-Type": "application/json",
-    },
-  }).then((res) => res.json());
+  }).then((res) => {
+    return res.json();
+  });
 };
 
 export const pullAsset = (asset, token) => {
@@ -59,3 +51,5 @@ export const postAsset = (asset, token, data) => {
     }
   });
 };
+
+// http://localhost:8000/playlist_episodes?creator_id=current&playlist_id=4

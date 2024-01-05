@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { pullUserFriends } from "../../managers/ServiceManager";
+import { pullUserAssets } from "../../managers/ServiceManager";
 
 export const AllFriends = () => {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ export const AllFriends = () => {
   const [friends, setFriends] = useState([]);
 
   useEffect(() => {
-    pullUserFriends(token).then((array) => {
+    pullUserAssets("friends", token).then((array) => {
       setFriends(array);
     });
   }, [token]);

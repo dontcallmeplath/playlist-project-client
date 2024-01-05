@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 export const Dropdown = () => {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
 
   return (
@@ -33,3 +32,5 @@ export const Dropdown = () => {
     </>
   );
 };
+
+export default Dropdown;
