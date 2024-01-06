@@ -40,3 +40,35 @@
   margin: 5px auto;
   cursor: pointer;
 }
+
+/* These apply to "Playlists" list - /my_playlists */
+.container-playlists {
+  border: black 1px solid;
+  display: inline-block;
+  padding: 15px;
+  margin: 0 5px;
+  min-height: 20rem;
+  cursor: pointer;
+}
+
+.container-playlists:hover {
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 5px;
+}
+
+.list-heading {
+  font-size: 20px;
+}
+
+.playlist-episode-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.playlist-episode {
+  border: black 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 3px 0;
+}

@@ -30,4 +30,5 @@
 
 .navbar__link:hover {
   text-decoration: underline;
+  color: rgb(248, 6, 248);
 }

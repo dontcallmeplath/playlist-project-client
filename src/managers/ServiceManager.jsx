@@ -46,9 +46,7 @@ export const postAsset = (asset, token, data) => {
     },
     body: JSON.stringify(data),
   }).then((res) => {
-    if (res.ok) {
-      res.json();
-    }
+    return res.json();
   });
 };
 

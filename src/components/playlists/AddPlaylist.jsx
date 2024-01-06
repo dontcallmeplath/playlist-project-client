@@ -12,21 +12,21 @@ export const AddPlaylist = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [playlistName, setPlaylistName] = useState("");
 
-const handleAdd = (e) => {
-  e.preventDefault();
+  const handleAdd = (e) => {
+    e.preventDefault();
 
-  const data = {
-    name: name.current.value,
+    const data = {
+      name: name.current.value,
+    };
+
+    postAsset("playlists", token, data).then((res) => {
+      if (res) {
+        navigate("/my_playlists");
+      } else {
+        setisUnsuccessful(true);
+      }
+    });
   };
-
-  postAsset("tags", token, data).then((res) => {
-    if (res) {
-      navigate("/tags");
-    } else {
-      setisUnsuccessful(true);
-    }
-  });
-};
 
   useEffect(() => {
     pullAsset("episodes", token).then((array) => {
@@ -39,8 +39,6 @@ const handleAdd = (e) => {
       episode.episode_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       episode.series_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-
 
   if (searchTerm == "") {
     return (

@@ -1,60 +1,71 @@
 import { useState, useEffect } from "react";
 import { pullUserAssets } from "../../managers/ServiceManager";
+import { useNavigate } from "react-router-dom";
 
 export const AllPlaylists = () => {
   const token = localStorage.getItem("token");
-  const [isUnsuccessful, setIsUnsuccessful] = useState(false);
   const [playlists, setPlaylists] = useState([]);
-  const [names, setNames] = useState([]);
-  const name_array = [];
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     pullUserAssets("playlist_episodes", token).then((array) => {
-      setPlaylists(array);
-      {
-        playlists ? handleNameArray() : setIsUnsuccessful(!isUnsuccessful);
+      let filteredPlaylists = filterUniquePlaylists(array);
+      setPlaylists(filteredPlaylists);
+      setLoading(false); // Set loading to false once playlists are updated
+    });
+  }, []);
+
+  const filterUniquePlaylists = (data) => {
+    const uniquePlaylists = {};
+
+    data.forEach((item) => {
+      const playlistId = item.playlist.id;
+      // Check if the playlistId is not already in uniquePlaylists
+      if (!uniquePlaylists[playlistId]) {
+        // If not, add the entire item (playlist + its nested data) to uniquePlaylists
+        uniquePlaylists[playlistId] = item;
       }
     });
-  }, [isUnsuccessful]);
-
-  const handleNameArray = () => {
-    if (isUnsuccessful) {
-      console.log("Dang");
-    } else {
-      playlists.forEach((element) => {
-        name_array.push(element.playlist.name);
-      });
-      setNames(name_array);
-      console.log(names);
-    }
+    // Extract the values from the uniquePlaylists object to get an array of unique items
+    return Object.values(uniquePlaylists);
   };
 
-  if (names.length > 0) {
-    for (let n = 0; n < names.length; n++) {
-      return (
-        <>
-          <h1>MY PLAYLISTS</h1>
+  const handleClick = (e) => {
+    e.preventDefault();
+    const id = e.currentTarget.__reactFiber$olqpr91lrrf.key;
+    navigate("/edit_playlist", id);
+  };
 
-          {names.forEach((name) => {
-            <h3>{name}</h3>;
-          })}
-          {playlists.map((playlist) => {
-            <>
-              <div className="episode">
-                <div>
-                  <strong>{playlist.episode.series_name}</strong>
+  return (
+    <>
+      <h1>MY PLAYLISTS</h1>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        playlists.map((playlist) => (
+          <>
+            <div
+              className="container-playlists"
+              key={playlist.playlist.id}
+              onClick={handleClick}
+              aria-label="Click to edit playlist"
+            >
+              <h3 className="list-heading">{playlist.playlist.name}</h3>
+              <div className="playlist-episode-list">
+                <div className="playlist" key={playlist.playlist.id}>
+                  {playlist.playlist.episode.map((epi) => (
+                    <div className="playlist-episode" key={epi.id}>
+                      <strong>{epi.series_name}</strong>
+                      <div>{epi.episode_name}</div>
+                    </div>
+                  ))}
                 </div>
-                <div>{playlist.episode.episode_name}</div>
               </div>
-              {/* <div>{playlist.episode.description}</div> */}
-            </>;
-          })}
-        </>
-      );
-    }
-  } else {
-    return <h1> OOPS! </h1>;
-  }
+            </div>
+          </>
+        ))
+      )}
+    </>
+  );
 };
-// maybe i can map the playlists by making an array of their names and running thru that array to match the name in an if statement
-// should the table for this go from episode to playlist ?
