@@ -25,7 +25,7 @@
 .content-area {
   border: black 1px solid;
   width: 80%;
-  height: 80%;
+  min-height: 80%;
   margin: 20px auto;
   /* padding: 15px 0; */
 }
@@ -41,12 +41,17 @@
   cursor: pointer;
 }
 
+.episode:hover {
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 5px;
+}
+
 /* These apply to "Playlists" list - /my_playlists */
 .container-playlists {
   border: black 1px solid;
   display: inline-block;
   padding: 15px;
-  margin: 0 5px;
+  margin: 10px 5px;
   min-height: 20rem;
   cursor: pointer;
 }
@@ -71,4 +76,37 @@
   border-radius: 5px;
   padding: 15px;
   margin: 3px 0;
+}
+
+/* These belong to the edit view */
+
+.edit-container-playlists {
+  border: black 1px solid;
+  display: inline-block;
+  padding: 15px;
+  margin: 0 5px;
+  min-height: 20rem;
+  cursor: pointer;
+}
+
+.edit-playlist {
+}
+
+.edit-playlist-episode {
+  border: black 1px solid;
+  border-radius: 5px;
+
+  padding: 15px;
+  margin: 3px 0;
+}
+
+#name {
+  margin-bottom: 20px;
+}
+.episode-name {
+  margin-left: 30px;
+}
+
+.delete-button {
+  margin-top: 10px;
 }

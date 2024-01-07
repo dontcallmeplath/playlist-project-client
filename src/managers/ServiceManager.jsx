@@ -27,6 +27,21 @@ export const pullUserAssets = (asset, token) => {
   });
 };
 
+export const pullUserAsset = (asset, token, id) => {
+  return fetch(
+    `http://localhost:8000/${asset}?creator_id=current&playlist_id=${id}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Token ${token}`,
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((res) => {
+    return res.json();
+  });
+};
+
 export const pullAsset = (asset, token) => {
   return fetch(`http://localhost:8000/${asset}`, {
     method: "GET",
@@ -47,6 +62,29 @@ export const postAsset = (asset, token, data) => {
     body: JSON.stringify(data),
   }).then((res) => {
     return res.json();
+  });
+};
+
+export const updateAsset = (asset, token, data, pk) => {
+  return fetch(`http://localhost:8000/${asset}/${pk}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((res) => {
+    return res.json();
+  });
+};
+
+export const deletePlaylistAsset = (token, pk) => {
+  return fetch(`http://localhost:8000/playlist_episodes/${pk}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
   });
 };
 

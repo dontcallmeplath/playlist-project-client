@@ -23,7 +23,7 @@ export const ApplicationViews = () => {
         <Route element={<Authorized />}>
           <Route path="/" element={<HomeView />} />
           <Route path="/my_playlists" element={<AllPlaylists />} />
-          <Route path="/edit_playlist" element={<EditPlaylist />} />
+          <Route path="/edit_playlist/:id" element={<EditPlaylist />} />
           <Route path="/add_playlist" element={<AddPlaylist />} />
           <Route path="/tags" element={<AllTags />} />
           <Route path="/add_tag" element={<AddTag />} />

@@ -31,11 +31,10 @@ export const AllPlaylists = () => {
     return Object.values(uniquePlaylists);
   };
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    const id = e.currentTarget.__reactFiber$olqpr91lrrf.key;
-    navigate("/edit_playlist", id);
+  const handleClick = (id) => {
+    navigate(`/edit_playlist/${id}`);
   };
+  //http://localhost:8000/playlist_episodes?creator_id=current&playlist_id=4
 
   return (
     <>
@@ -48,7 +47,7 @@ export const AllPlaylists = () => {
             <div
               className="container-playlists"
               key={playlist.playlist.id}
-              onClick={handleClick}
+              onClick={() => handleClick(playlist.playlist.id)}
               aria-label="Click to edit playlist"
             >
               <h3 className="list-heading">{playlist.playlist.name}</h3>
