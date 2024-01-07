@@ -1,0 +1,17 @@
+.episode-list {
+  border: black 1px solid;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 7px auto;
+  width: 30%;
+}
+
+.episode-list:hover {
+  cursor: pointer;
+}
+
+.episode-list.clicked {
+  min-height: 75px;
+  width: 50%;
+}

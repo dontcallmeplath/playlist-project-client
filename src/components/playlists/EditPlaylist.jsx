@@ -6,6 +6,9 @@ import {
 } from "../../managers/ServiceManager";
 import { useNavigate, useParams } from "react-router-dom";
 
+// working on how to handle "add" on playlist that already exists - don't really want to copy all the state stuff from AddPlaylist
+// but maybe that makes the most sense ? idk maybe edit only allows for delete ? i think the user stories mention add specifically :(
+
 export const EditPlaylist = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");

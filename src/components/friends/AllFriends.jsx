@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { pullUserAssets } from "../../managers/ServiceManager";
+import "./Friend.css";
 
 export const AllFriends = () => {
   const navigate = useNavigate();
@@ -26,14 +27,25 @@ export const AllFriends = () => {
   return (
     <div>
       <h1>FRIENDS</h1>
+
       {friends.map((friend) => (
         <>
-          <div key={friend.id} onClick={handleClick(friend.email)}>
-            {friend.name}
-            <div>{friend.email}</div>
+          <div className="friend-container">
+            <div
+              className="friend-list"
+              key={friend.id}
+              onClick={handleClick(friend.email)}
+            >
+              {friend.name}
+              <div>{friend.email}</div>
+            </div>
           </div>
         </>
       ))}
+      <p>
+        Not seeing who you're looking for ?{" "}
+        <Link to={`/add_friend`}>Add Friend instead :)</Link>
+      </p>
     </div>
   );
 };

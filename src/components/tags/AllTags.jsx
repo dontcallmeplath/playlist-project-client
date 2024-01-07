@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { pullAsset } from "../../managers/ServiceManager";
 
 export const AllTags = () => {
@@ -20,6 +21,10 @@ export const AllTags = () => {
     return (
       <div>
         <h1>TAGS</h1>
+        <p>
+          Not seeing what you're looking for ?{" "}
+          <Link to={`/add_tag`}>Add Tag instead :)</Link>
+        </p>
         <input
           type="text"
           placeholder="Search tags..."
@@ -32,6 +37,10 @@ export const AllTags = () => {
     return (
       <div>
         <h1>TAGS</h1>
+        <p>
+          Not seeing what you're looking for ?{" "}
+          <Link to={`/add_tag`}>Add Tag instead :)</Link>
+        </p>
         <input
           type="text"
           placeholder="Search tags..."
