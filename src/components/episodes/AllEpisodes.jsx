@@ -19,7 +19,10 @@ const EpisodeItem = ({ episode, isExpanded, handleClick }) => {
             <strong>Description:</strong> {episode.description}
           </div>
           <div className="episode-tags">
-            <strong>Tag:</strong> {episode.tag}
+            <strong>Tag: </strong>
+            {episode.tag.map((tag) => (
+              <span key={tag.id}>{tag.label}, </span>
+            ))}
           </div>
         </>
       )}

@@ -23,11 +23,14 @@
 }
 
 .content-area {
-  border: black 1px solid;
-  width: 80%;
+  border: #000000 1px solid;
+  width: 85%;
   min-height: 80%;
+  max-height: 570px;
   margin: 20px auto;
-  /* padding: 15px 0; */
+  overflow: auto;
+  scrollbar-color: red orange;
+  scrollbar-width: thin;
 }
 
 .heading {
@@ -39,11 +42,16 @@
   width: 80%;
   margin: 5px auto;
   cursor: pointer;
+  padding: 5px;
 }
 
 .episode:hover {
   box-shadow: 3px 3px 3px gray;
   border-radius: 5px;
+}
+
+.episode.clicked {
+  max-width: 360px;
 }
 
 /* These apply to "Playlists" list - /my_playlists */

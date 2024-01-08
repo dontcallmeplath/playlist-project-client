@@ -69,6 +69,14 @@ export const AddPlaylist = () => {
     }
   };
 
+  const handleToggleExpand = (episodeId, isExpanded) => {
+    setEpisodes((prevEpisodes) =>
+      prevEpisodes.map((episode) =>
+        episode.id === episodeId ? { ...episode, isExpanded } : episode
+      )
+    );
+  };
+
   useEffect(() => {
     pullAsset("episodes", token).then((array) => {
       setEpisodes(array);
@@ -135,6 +143,7 @@ export const AddPlaylist = () => {
       <>
         <h1 id="heading">ADD PLAYLIST</h1>
         <div className="container">
+          {/* PLAYLIST CONTAINER */}
           <div className="playlist-container">
             <div className="content-area">
               <label htmlFor="name">
@@ -160,6 +169,7 @@ export const AddPlaylist = () => {
             <button onClick={handleAdd}>Add Playlist</button>
             <button onClick={handleShare}>Share Playlist</button>
           </div>
+          {/* EPISODE CONTAINER */}
           <div className="episode-container">
             <div className="content-area">
               <h3 className="heading">Episode Search:</h3>
@@ -173,13 +183,29 @@ export const AddPlaylist = () => {
 
               {filteredEpisodes.map((episode) => (
                 <div
-                  className="episode"
                   id="episode"
-                  key={episode.id}
                   onClick={() => handleEpisodes(episode)}
+                  className={episode.isExpanded ? "episode clicked" : "episode"}
+                  key={episode.id}
+                  onMouseEnter={() => handleToggleExpand(episode.id, true)}
+                  onMouseLeave={() => handleToggleExpand(episode.id, false)}
                 >
                   <strong>{episode.series_name}</strong>
                   <div>{episode.episode_name}</div>
+                  {episode.isExpanded && (
+                    <>
+                      <div className="episode-rating">{episode.rating}</div>
+                      <div className="episode-description">
+                        {episode.description}
+                      </div>
+                      <div className="episode-tags">
+                        <strong>Tag: </strong>
+                        {episode.tag.map((tag) => (
+                          <span key={tag.id}>{tag.label}, </span>
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
