@@ -35,14 +35,34 @@ export const AddFriend = () => {
         <div className="">
           <label className="">Name</label>
           <div className="">
-            <input className="" type="text" ref={name} />
+            <input
+              className=""
+              type="text"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={name}
+            />
           </div>
         </div>
 
         <div className="">
           <label className="">Email</label>
           <div className="">
-            <input className="" type="text" ref={email} />
+            <input
+              className=""
+              type="text"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={email}
+            />
           </div>
         </div>
 

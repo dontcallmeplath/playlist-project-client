@@ -4,14 +4,6 @@
   /* flex-wrap: nowrap; */
   justify-content: center;
 }
-/* 
-.playlist-container {
-  
-}
-
-.episode-container {
-  
-} */
 
 .playlist-container,
 .episode-container {
@@ -29,8 +21,6 @@
   max-height: 570px;
   margin: 20px auto;
   overflow: auto;
-  scrollbar-color: red orange;
-  scrollbar-width: thin;
 }
 
 .heading {
@@ -87,23 +77,31 @@
 }
 
 /* These belong to the edit view */
+#container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* justify-content: center; */
+}
 
-.edit-container-playlists {
+.edit-container-playlists,
+.episode-container-edit {
+  flex-basis: auto;
   border: black 1px solid;
-  display: inline-block;
   padding: 15px;
   margin: 0 5px;
-  min-height: 20rem;
+  min-width: 450px;
+  max-height: 600px;
   cursor: pointer;
 }
 
-.edit-playlist {
+.edit-container-playlists {
+  overflow: auto;
 }
 
 .edit-playlist-episode {
   border: black 1px solid;
   border-radius: 5px;
-
   padding: 15px;
   margin: 3px 0;
 }
@@ -111,10 +109,18 @@
 #name {
   margin-bottom: 20px;
 }
+
 .episode-name {
   margin-left: 30px;
 }
 
 .delete-button {
   margin-top: 10px;
+}
+
+input {
+  margin-bottom: "15px";
+  min-height: "30px";
+  font-size: "15px";
+  font-family: "monospace";
 }

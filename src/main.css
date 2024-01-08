@@ -64,6 +64,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+input {
+  margin-bottom: "15px";
+  min-height: "30px";
+  font-size: "15px";
+  font-family: "monospace";
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

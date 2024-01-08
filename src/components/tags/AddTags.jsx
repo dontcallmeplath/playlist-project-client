@@ -33,7 +33,17 @@ export const AddTag = () => {
         <div className="">
           <label className="">Tag</label>
           <div className="">
-            <input className="" type="text" ref={label} />
+            <input
+              className=""
+              type="text"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={label}
+            />
           </div>
         </div>
 

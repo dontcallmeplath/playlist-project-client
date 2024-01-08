@@ -44,25 +44,69 @@ export const AddEpisode = () => {
         <div className="">
           <label className="">Series Name</label>
           <div className="">
-            <input className="" type="text" size="50" ref={series_name} />
+            <input
+              className=""
+              type="text"
+              size="50"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={series_name}
+            />
           </div>
         </div>
         <div className="">
           <label className="">Episode Name</label>
           <div className="">
-            <input className="" type="text" size="50" ref={episode_name} />
+            <input
+              className=""
+              type="text"
+              size="50"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={episode_name}
+            />
           </div>
         </div>
         <div className="">
           <label className="">Serial</label>
           <div className="">
-            <input className="" type="text" size="50" ref={serial} />
+            <input
+              className=""
+              type="text"
+              size="50"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={serial}
+            />
           </div>
         </div>
         <div className="">
           <label className="">Description</label>
           <div className="">
-            <input className="" type="textarea" size="50" ref={description} />
+            <input
+              className=""
+              type="textarea"
+              size="50"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={description}
+            />
           </div>
         </div>
         <div className="">
@@ -73,6 +117,12 @@ export const AddEpisode = () => {
               type="url"
               pattern="https://.*"
               size="50"
+              style={{
+                marginBottom: "15px",
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
               ref={image}
             />
           </div>

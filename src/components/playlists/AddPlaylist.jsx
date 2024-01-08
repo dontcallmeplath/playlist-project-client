@@ -11,6 +11,7 @@ export const AddPlaylist = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const name = useRef();
+  const [newPlaylist, setNewPlaylist] = useState(null);
   const [episodes, setEpisodes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedEpisodes, setSelectedEpisodes] = useState([]);
@@ -27,6 +28,7 @@ export const AddPlaylist = () => {
 
     postAsset("playlists", token, playlist).then((res) => {
       if ((res.creator = localStorage.getItem("id"))) {
+        setNewPlaylist(localStorage.setItem("playlistId", res.id));
         selectedEpisodes.forEach((e) => {
           const playlist_episode = {
             playlist_id: res.id,
@@ -35,7 +37,10 @@ export const AddPlaylist = () => {
 
           postAsset("playlist_episodes", token, playlist_episode);
         });
-        navigate("/my_playlists");
+        const go = window.confirm("Are you finished here ?");
+        if (go) {
+          navigate("/my_playlists");
+        }
       } else {
         const jsxContent = (
           <>
@@ -52,10 +57,13 @@ export const AddPlaylist = () => {
   const handleShare = (e) => {
     e.preventDefault();
     localStorage.setItem("playlist", JSON.stringify(selectedEpisodes));
-    const go = window.confirm("Are you sure you'd like to leave this page ?");
+    const go = window.confirm(
+      "Make sure you save the current playlist before we leave this page :)"
+    );
+    console.log(newPlaylist);
     // true if OK is pressed, false if Cancel is pressed
     if (go) {
-      navigate("/friends");
+      navigate(`/friends`);
     }
   };
 
@@ -110,6 +118,11 @@ export const AddPlaylist = () => {
                 minLength="4"
                 maxLength="40"
                 size="30"
+                style={{
+                  minHeight: "30px",
+                  fontSize: "15px",
+                  fontFamily: "monospace",
+                }}
                 ref={name}
                 required
               />
@@ -130,6 +143,11 @@ export const AddPlaylist = () => {
                 type="text"
                 size="30"
                 placeholder="Search episodes..."
+                style={{
+                  minHeight: "30px",
+                  fontSize: "15px",
+                  fontFamily: "monospace",
+                }}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -156,6 +174,11 @@ export const AddPlaylist = () => {
                 minLength="4"
                 maxLength="40"
                 size="30"
+                style={{
+                  minHeight: "30px",
+                  fontSize: "15px",
+                  fontFamily: "monospace",
+                }}
                 ref={name}
                 required
               />
@@ -177,6 +200,11 @@ export const AddPlaylist = () => {
                 type="text"
                 size="30"
                 placeholder="Search episodes..."
+                style={{
+                  minHeight: "30px",
+                  fontSize: "15px",
+                  fontFamily: "monospace",
+                }}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />

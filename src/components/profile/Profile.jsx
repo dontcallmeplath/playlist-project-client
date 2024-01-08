@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { updateUser } from "../../managers/ServiceManager";
+import "../../main.css";
 
 export const ProfileView = () => {
   const email = useRef();
@@ -10,7 +11,6 @@ export const ProfileView = () => {
   const navigate = useNavigate();
   const userId = localStorage.getItem("id");
   const token = localStorage.getItem("token");
-  const [isUnsuccessful, setisUnsuccessful] = useState(false);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -23,12 +23,9 @@ export const ProfileView = () => {
       password: "password",
     };
 
-    updateUser(user, userId, token).then((res) => {
-      if ("valid" in res && res.valid) {
-        navigate("/");
-      } else {
-        setisUnsuccessful(true);
-      }
+    updateUser(user, userId, token).then(() => {
+      localStorage.setItem("name", first_name.current.value);
+      navigate("/");
     });
   };
 
@@ -40,21 +37,48 @@ export const ProfileView = () => {
         <div className="">
           <label className="">Email</label>
           <div className="">
-            <input className="" type="text" ref={email} />
+            <input
+              className=""
+              type="text"
+              style={{
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={email}
+            />
           </div>
         </div>
 
         <div className="">
           <label className="">First Name</label>
           <div className="">
-            <input className="" type="text" ref={first_name} />
+            <input
+              className=""
+              type="text"
+              style={{
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={first_name}
+            />
           </div>
         </div>
 
         <div className="">
           <label className="">Last Name</label>
           <div className="">
-            <input className="" type="text" ref={last_name} />
+            <input
+              className=""
+              type="text"
+              style={{
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              ref={last_name}
+            />
           </div>
         </div>
 
@@ -70,11 +94,6 @@ export const ProfileView = () => {
             </Link>
           </div>
         </div>
-        {isUnsuccessful ? (
-          <p className="">Hmm.. Something is not right here</p>
-        ) : (
-          ""
-        )}
       </form>
     </section>
   );

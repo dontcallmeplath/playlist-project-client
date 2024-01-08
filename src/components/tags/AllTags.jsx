@@ -28,6 +28,12 @@ export const AllTags = () => {
         <input
           type="text"
           placeholder="Search tags..."
+          style={{
+            marginBottom: "15px",
+            minHeight: "30px",
+            fontSize: "15px",
+            fontFamily: "monospace",
+          }}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -44,6 +50,12 @@ export const AllTags = () => {
         <input
           type="text"
           placeholder="Search tags..."
+          style={{
+            marginBottom: "15px",
+            minHeight: "30px",
+            fontSize: "15px",
+            fontFamily: "monospace",
+          }}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

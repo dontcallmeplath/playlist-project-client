@@ -12,6 +12,8 @@ export const updateUser = (user, userId, token) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
+  }).then((res) => {
+    return res.json();
   });
 };
 
@@ -80,6 +82,16 @@ export const updateAsset = (asset, token, data, pk) => {
 
 export const deletePlaylistAsset = (token, pk) => {
   return fetch(`http://localhost:8000/playlist_episodes/${pk}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+};
+
+export const deleteEpisodeAsset = (token, pk) => {
+  return fetch(`http://localhost:8000/episode_tags/${pk}`, {
     method: "DELETE",
     headers: {
       Authorization: `Token ${token}`,
