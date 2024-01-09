@@ -45,13 +45,21 @@
 }
 
 /* These apply to "Playlists" list - /my_playlists */
+.all-page-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .container-playlists {
   border: black 1px solid;
-  display: inline-block;
+  flex-basis: 90%;
   padding: 15px;
   margin: 10px 5px;
   min-height: 20rem;
+  max-height: 20rem;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .container-playlists:hover {
@@ -74,6 +82,7 @@
   border-radius: 5px;
   padding: 15px;
   margin: 3px 0;
+  min-width: 336px;
 }
 
 /* These belong to the edit view */

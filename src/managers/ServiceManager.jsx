@@ -12,8 +12,6 @@ export const updateUser = (user, userId, token) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
-  }).then((res) => {
-    return res.json();
   });
 };
 

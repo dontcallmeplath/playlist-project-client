@@ -44,21 +44,23 @@ export const AllPlaylists = () => {
       ) : (
         playlists.map((playlist) => (
           <>
-            <div
-              className="container-playlists"
-              key={playlist.playlist.id}
-              onClick={() => handleClick(playlist.playlist.id)}
-              aria-label="Click to edit playlist"
-            >
-              <h3 className="list-heading">{playlist.playlist.name}</h3>
-              <div className="playlist-episode-list">
-                <div className="playlist" key={playlist.playlist.id}>
-                  {playlist.playlist.episode.map((epi) => (
-                    <div className="playlist-episode" key={epi.id}>
-                      <strong>{epi.series_name}</strong>
-                      <div>{epi.episode_name}</div>
-                    </div>
-                  ))}
+            <div className="all-page-container">
+              <div
+                className="container-playlists"
+                key={playlist.playlist.id}
+                onClick={() => handleClick(playlist.playlist.id)}
+                aria-label="Click to edit playlist"
+              >
+                <h3 className="list-heading">{playlist.playlist.name}</h3>
+                <div className="playlist-episode-list">
+                  <div className="playlist" key={playlist.playlist.id}>
+                    {playlist.playlist.episode.slice(0, 3).map((epi) => (
+                      <div className="playlist-episode" key={epi.id}>
+                        <strong>{epi.series_name}</strong>
+                        <div key={epi.id}>{epi.episode_name}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

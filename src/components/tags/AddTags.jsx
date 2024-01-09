@@ -16,7 +16,6 @@ export const AddTag = () => {
     };
 
     postAsset("tags", token, data).then((res) => {
-      console.log(res);
       if (res.label == label.current.value) {
         navigate("/tags");
       } else {

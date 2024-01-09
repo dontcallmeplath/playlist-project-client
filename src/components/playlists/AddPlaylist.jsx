@@ -60,7 +60,6 @@ export const AddPlaylist = () => {
     const go = window.confirm(
       "Make sure you save the current playlist before we leave this page :)"
     );
-    console.log(newPlaylist);
     // true if OK is pressed, false if Cancel is pressed
     if (go) {
       navigate(`/friends`);
