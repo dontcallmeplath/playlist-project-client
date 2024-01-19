@@ -1,3 +1,7 @@
+body {
+  padding-bottom: 30px;
+}
+
 .container {
   display: inline-flex;
   flex-direction: row;
@@ -7,7 +11,9 @@
 
 .playlist-container,
 .episode-container {
+  background-color: rgb(255, 255, 255, 0.3);
   border: black 1px solid;
+  border-radius: 5px;
   margin: 10px;
   flex-basis: auto;
   min-width: 450px;
@@ -15,7 +21,9 @@
 }
 
 .content-area {
+  background-color: rgb(255, 255, 255, 0.7);
   border: #000000 1px solid;
+  border-radius: 5px;
   width: 85%;
   min-height: 80%;
   max-height: 570px;
@@ -28,6 +36,8 @@
 }
 
 .episode {
+  background-color: rgb(236, 205, 205, 0.5);
+  border-radius: 5px;
   border: black 1px solid;
   width: 80%;
   margin: 5px auto;
@@ -52,6 +62,7 @@
 }
 
 .container-playlists {
+  background-color: rgb(255, 255, 255, 0.4);
   border: black 1px solid;
   flex-basis: 90%;
   padding: 15px;
@@ -78,6 +89,7 @@
 }
 
 .playlist-episode {
+  background-color: rgb(255, 255, 255, 0.7);
   border: black 1px solid;
   border-radius: 5px;
   padding: 15px;
@@ -96,6 +108,7 @@
 .edit-container-playlists,
 .episode-container-edit {
   flex-basis: auto;
+  background-color: rgb(255, 255, 255, 0.4);
   border: black 1px solid;
   padding: 15px;
   margin: 0 5px;
@@ -113,6 +126,16 @@
   border-radius: 5px;
   padding: 15px;
   margin: 3px 0;
+}
+
+.content-area-edit {
+  /* border: #000000 1px solid; */
+  border-radius: 5px;
+  width: 85%;
+  min-height: 80%;
+  max-height: 470px;
+  margin: 20px auto;
+  overflow: auto;
 }
 
 #name {

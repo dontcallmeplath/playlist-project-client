@@ -1,0 +1,15 @@
+.tag-container {
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.tag {
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 3px;
+  border: 1px solid black;
+  flex-basis: 30%;
+  margin: 3px auto;
+  cursor: pointer;
+}

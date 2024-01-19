@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../managers/AuthManager.jsx";
+import "./Login.css";
 
 export const Login = () => {
   const username = useRef();
@@ -29,43 +30,69 @@ export const Login = () => {
   };
 
   return (
-    <section className="">
-      <form className="" onSubmit={handleLogin}>
-        <h1 className="">PLAYLIST PLAYTHINGS</h1>
-        <p className="">Please sign in</p>
+    <div className="auth-container">
+      <section className="">
+        <form className="" onSubmit={handleLogin}>
+          <h1 className="header">PLAYLIST PLAYTHINGS</h1>
+          <p className="">Please sign in</p>
 
-        <div className="">
-          <label className="">Username</label>
           <div className="">
-            <input className="" type="text" ref={username} />
+            <label className="">Username</label>
+            <div className="auth-form">
+              <input
+                className="auth-form-input"
+                type="text"
+                ref={username}
+                size="40"
+                style={{
+                  marginBottom: "15px",
+                  minHeight: "25px",
+                  fontSize: "15px",
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                }}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="">
-          <label className="">Password</label>
           <div className="">
-            <input className="" type="password" ref={password} />
+            <label className="">Password</label>
+            <div className="auth-form">
+              <input
+                className="auth-form-input"
+                type="password"
+                ref={password}
+                size="40"
+                style={{
+                  marginBottom: "15px",
+                  minHeight: "25px",
+                  fontSize: "15px",
+                  fontFamily: "monospace",
+                  textAlign: "center",
+                }}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="">
           <div className="">
-            <button className="" type="submit">
-              Submit
-            </button>
+            <div className="">
+              <button className="" type="submit">
+                Submit
+              </button>
+            </div>
+            <div className="register-link">
+              <Link to="/register" className="">
+                Cancel
+              </Link>
+            </div>
           </div>
-          <div className="">
-            <Link to="/register" className="">
-              Cancel
-            </Link>
-          </div>
-        </div>
-        {isUnsuccessful ? (
-          <p className="">Username or password not valid</p>
-        ) : (
-          ""
-        )}
-      </form>
-    </section>
+          {isUnsuccessful ? (
+            <p className="">Username or password not valid</p>
+          ) : (
+            ""
+          )}
+        </form>
+      </section>
+    </div>
   );
 };

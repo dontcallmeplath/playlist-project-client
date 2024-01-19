@@ -1,4 +1,5 @@
 .episode-list {
+  background-color: rgb(255, 255, 255, 0.6);
   border: black 1px solid;
   box-shadow: 3px 3px 3px gray;
   border-radius: 5px;

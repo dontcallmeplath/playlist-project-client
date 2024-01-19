@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../managers/AuthManager";
+import "./Login.css";
 
 export const Register = () => {
   const firstName = useRef();
@@ -41,77 +42,132 @@ export const Register = () => {
   };
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleRegister}>
-        <h1 className="title">PLAYLIST PLAYTHINGS</h1>
-        <p className="subtitle">Create an account</p>
-        <div className="field">
-          <label className="label">First Name</label>
-          <div className="control">
-            <input className="input" type="text" ref={firstName} />
+    <section className="auth-container">
+      <form className="" onSubmit={handleRegister}>
+        <h1 className="header">PLAYLIST PLAYTHINGS</h1>
+        <p className="">Create an account</p>
+        <div className="">
+          <label className="">First Name</label>
+          <div className="">
+            <input
+              className="auth-form-input"
+              type="text"
+              ref={firstName}
+              size="40"
+              style={{
+                marginBottom: "15px",
+                minHeight: "25px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+            />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Last Name</label>
-          <div className="control">
-            <input className="input" type="text" ref={lastName} />
+        <div className="">
+          <label className="">Last Name</label>
+          <div className="">
+            <input
+              className="auth-form-input"
+              type="text"
+              ref={lastName}
+              size="40"
+              style={{
+                marginBottom: "15px",
+                minHeight: "25px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+            />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Email</label>
-          <div className="control">
-            <input className="input" type="email" ref={email} />
+        <div className="">
+          <label className=" ">Email</label>
+          <div className=" ">
+            <input
+              className="auth-form-input"
+              type="email"
+              ref={email}
+              size="40"
+              style={{
+                marginBottom: "15px",
+                minHeight: "25px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+            />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Password</label>
-          <div className="field-body">
-            <div className="field">
-              <p className="control is-expanded">
+        <div className="">
+          <label className=" ">Password</label>
+          <div className=" ">
+            <div className="">
+              <p className=" ">
                 <input
-                  className="input"
+                  className="auth-form-input"
                   type="password"
                   placeholder="Password"
                   ref={password}
+                  size="30"
+                  style={{
+                    marginBottom: "15px",
+                    minHeight: "25px",
+                    fontSize: "15px",
+                    fontFamily: "monospace",
+                  }}
                 />
               </p>
             </div>
 
-            <div className="field">
-              <p className="control is-expanded">
+            <div className="">
+              <p className=" ">
                 <input
-                  className="input"
+                  className="auth-form-input"
                   type="password"
                   placeholder="Verify Password"
                   ref={verifyPassword}
+                  size="30"
+                  style={{
+                    marginBottom: "15px",
+                    minHeight: "25px",
+                    fontSize: "15px",
+                    fontFamily: "monospace",
+                  }}
                 />
               </p>
             </div>
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Bio</label>
-          <div className="control">
+        <div className="">
+          <label className=" ">Bio</label>
+          <div className=" ">
             <textarea
               className="textarea"
               placeholder="Tell us about yourself..."
               ref={bio}
+              size="40"
+              style={{
+                marginBottom: "15px",
+                minHeight: "120px",
+                minWidth: "400px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
             ></textarea>
           </div>
         </div>
 
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link" type="submit">
+        <div className="  ">
+          <div className=" ">
+            <button className="button  " type="submit">
               Submit
             </button>
           </div>
-          <div className="control">
-            <Link to="/login" className="button is-link is-light">
+          <div className=" ">
+            <Link to="/login" className="button  ">
               Cancel
             </Link>
           </div>

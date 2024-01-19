@@ -181,21 +181,21 @@ export const EditPlaylist = () => {
             </>
           ))}
           <div className="episode-container-edit">
-            <div className="content-area">
-              <h3 className="heading">Episode Search:</h3>
-              <input
-                type="text"
-                size="30"
-                placeholder="Search episodes..."
-                style={{
-                  minHeight: "30px",
-                  fontSize: "15px",
-                  fontFamily: "monospace",
-                }}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+            <h3 className="heading">Episode Search:</h3>
+            <input
+              type="text"
+              size="30"
+              placeholder="Search episodes..."
+              style={{
+                minHeight: "30px",
+                fontSize: "15px",
+                fontFamily: "monospace",
+              }}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
 
+            <div className="content-area-edit">
               {filteredEpisodes.map((episode) => (
                 <div
                   id="episode"

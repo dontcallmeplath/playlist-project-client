@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+  min-height: 560px;
+  padding-top: 30px;
+}
+
+#circle-container {
+  max-height: 105px;
+  display: flex;
+}
+
+.circle {
+  margin: 20px;
+  width: 150px;
+  height: 100px;
+  border-radius: 50%;
+  padding-top: 50px;
+  border: 2px solid #000;
+  background: rgb(255, 255, 255, 0.3);
+}
+
+.circle:hover {
+  border-radius: 5px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}

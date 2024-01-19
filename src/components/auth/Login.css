@@ -1,8 +1,21 @@
+body {
+  background: linear-gradient(
+    123.5deg,
+    rgb(244, 219, 251) 29.3%,
+    rgb(255, 214, 214) 67.1%
+  );
+  border-radius: 30px;
+  margin: 0 30px;
+  min-height: fit-content;
+}
+
 .auth-container {
   border: 1px solid gray;
-  margin: 3rem 15rem;
+  background: rgb(255, 255, 255, 0.3);
+  margin: 3rem auto;
   padding: 2rem;
   border-radius: 1rem;
+  width: 650px;
 }
 
 .header {
@@ -25,4 +38,9 @@
 
 .auth-fieldset {
   margin: 0.25rem 0rem;
+}
+
+input,
+textarea {
+  border-radius: 5px;
 }

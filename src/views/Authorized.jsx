@@ -1,3 +1,4 @@
+import { NavBar } from "../components/nav/NavBar";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 // We can access child components the same way we access props. Child components are passed to our props as a key/value pair where
@@ -10,8 +11,8 @@ export const Authorized = () => {
   if (localStorage.getItem("token")) {
     return (
       <>
-        {/* <NavBar /> */}
         <main>
+          <NavBar />
           <Outlet />
         </main>
       </>

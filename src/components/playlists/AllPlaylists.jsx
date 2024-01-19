@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Playlist.css";
 import { pullUserAssets } from "../../managers/ServiceManager";
 import { useNavigate } from "react-router-dom";
 

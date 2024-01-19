@@ -98,4 +98,14 @@ export const deleteEpisodeAsset = (token, pk) => {
   });
 };
 
+export const deleteTag = (token, pk) => {
+  return fetch(`http://localhost:8000/tags/${pk}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+};
+
 // http://localhost:8000/playlist_episodes?creator_id=current&playlist_id=4

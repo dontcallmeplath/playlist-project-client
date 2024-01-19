@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { pullAsset } from "../../managers/ServiceManager";
+import { pullAsset, deleteTag } from "../../managers/ServiceManager";
+import "./Tag.css";
+import "../../App.css";
 
 export const AllTags = () => {
   const token = localStorage.getItem("token");
   const [tags, setTags] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
     pullAsset("tags", token).then((array) => {
@@ -16,6 +19,14 @@ export const AllTags = () => {
   const filteredTags = tags.filter((tag) =>
     tag.label.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleDeleteTag = (e, badTag) => {
+    e.stopPropagation();
+    const go = window.confirm("Would you like to delete this tag ?");
+    if (go) {
+      deleteTag(token, badTag).then(() => setRender(true));
+    }
+  };
 
   if (searchTerm == "") {
     return (
@@ -59,12 +70,19 @@ export const AllTags = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-
-        {filteredTags.map((tag) => (
-          <>
-            <div key={tag.id}>{tag.label}</div>
-          </>
-        ))}
+        <div className="tag-container">
+          {filteredTags.map((tag) => (
+            <>
+              <div
+                className="tag"
+                key={tag.id}
+                onClick={(e) => handleDeleteTag(e, tag.id)}
+              >
+                {tag.label}
+              </div>
+            </>
+          ))}
+        </div>
       </div>
     );
   }

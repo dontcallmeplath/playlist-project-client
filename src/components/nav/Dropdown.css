@@ -1,20 +1,19 @@
 .dropdown-menu {
-  background-color: rgba(211, 211, 211, 0.5);
   width: 200px;
   position: absolute;
-  top: 111px;
+  top: 142px;
   list-style: none;
   text-align: start;
-  padding: 0;
+  padding: 10px;
 }
 
 .dropdown-menu li {
-  background-color: rgba(211, 211, 211);
+  background-color: rgba(255, 255, 255, 0.625);
   cursor: pointer;
 }
 
 .dropdown-menu li:hover {
-  background-color: rgba(211, 211, 211, 0.425);
+  background-color: rgba(230, 197, 243, 0.8);
 }
 
 .dropdown-menu.clicked {
@@ -33,7 +32,7 @@
 }
 
 .dropdown-link:hover {
-  color: rgb(248, 6, 248);
+  color: rgb(54, 117, 104);
 }
 
 @media screen and (max-width: 960px) {

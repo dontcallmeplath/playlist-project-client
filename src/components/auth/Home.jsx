@@ -1,5 +1,5 @@
 import TVlogo from "../../assets/tv-icon.png";
-import "../../App.css";
+import "./Home.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { pullUserAssets } from "../../managers/ServiceManager";
