@@ -1,4 +1,6 @@
-# Playlist Playthings [Backend Repo](https://github.com/dontcallmeplath/playlist-project-api)
+# Playlist Playthings 
+
+[Backend Repo](https://github.com/dontcallmeplath/playlist-project-api)
 
 Personalized playlist builder for TV episodes by topic and/or genre
 
